@@ -1,13 +1,6 @@
 # coding: utf-8
-def event(message)
-  puts "alert message #{message}" if yield
-end
-
-def setup(&block)
-  yield
-end
 def monthly_sales
-  90
+  110
 end
 setup do
   @target_sales = 100
