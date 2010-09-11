@@ -1,0 +1,16 @@
+このdslを実行できるようにするにはどうしたらいいか
+
+yeildすればいいよね
+じゃあ全部トップレベルにひろげちゃってるけどスコープ絞りたいよね
+クリーンルーム
+Object.newして　instance_eval
+
+これでもまだ一時変数をトップレベルにくっつけちゃってるよね
+ローカル変数を共有したいよね
+lambdaでかこって Kernel.send :define_method
+
+結局Kernelにつけてない?っていうまっとうなつっこみあり
+
+block localな変数をどうするのって話してた
+
+yuguiさんのmetametameta class の図を見てた
