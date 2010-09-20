@@ -1,0 +1,25 @@
+
+ruby-1.9.2-p0 > class D
+ruby-1.9.2-p0 ?>  def public_method
+ruby-1.9.2-p0 ?>    private_method
+ruby-1.9.2-p0 ?>    end
+ruby-1.9.2-p0 ?>  private
+ruby-1.9.2-p0 ?>  def private_method; end
+ruby-1.9.2-p0 ?>  end
+=> nil
+ruby-1.9.2-p0 > D.new.public_method
+=> nil
+ruby-1.9.2-p0 > class C
+ruby-1.9.2-p0 ?>  def public_method
+ruby-1.9.2-p0 ?>    self.private_method
+ruby-1.9.2-p0 ?>    end
+ruby-1.9.2-p0 ?>  private
+ruby-1.9.2-p0 ?>  def private_method; end
+ruby-1.9.2-p0 ?>  end
+=> nil
+ruby-1.9.2-p0 > C.new.public_method
+NoMethodError: private method `private_method' called for #<C:0x0000000293f858>
+  from (irb):18:in `public_method'
+  from (irb):23
+  from /home/sane/.rvm/rubies/ruby-1.9.2-p0/bin/irb:17:in `<main>'
+ruby-1.9.2-p0 >
